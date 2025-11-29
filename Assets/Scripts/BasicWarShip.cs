@@ -7,7 +7,7 @@ public class BasicWarShip : Enemy
     [SerializeField] private float _swaySpeed = 2.0f;
     [SerializeField] private float _swayWidth = 2.5f;
 
-    [Header("Screen Bounds (ขอบจอ)")]
+    [Header("Screen Bounds")]
     [SerializeField] private float _minX = -2.25f; // ขอบซ้ายสุด (ลองลากยานไปวัดดู)
     [SerializeField] private float _maxX = 2.25f;  // ขอบขวาสุด
 

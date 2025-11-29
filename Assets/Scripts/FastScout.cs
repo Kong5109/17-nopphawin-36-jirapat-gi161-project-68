@@ -6,7 +6,7 @@ public class FastScout : Enemy
     [SerializeField] private float _waveFrequency = 1f;
     [SerializeField] private float _waveMagnitude = 3f;
 
-    [Header("Screen Bounds (ขอบจอ)")]
+    [Header("Screen Bounds")]
     [SerializeField] private float _minX = -8f; 
     [SerializeField] private float _maxX = 8f;  
 
