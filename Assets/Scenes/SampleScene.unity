@@ -357,7 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b1bc7da1ac926d47b52b5cd892b414c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterName: 
+  _characterName: Player
   _hp: 0
   _moveSpeed: 3
   _scoreValue: 0
