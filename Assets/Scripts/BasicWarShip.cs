@@ -3,20 +3,14 @@ using UnityEngine;
 public class BasicWarShip : Enemy
 {
     [Header("Movement Settings")]
-    [SerializeField] private float _stopYPosition = 3.0f;
-    [SerializeField] private float _swaySpeed = 2.0f;
-    [SerializeField] private float _swayWidth = 2.5f;
-
-    [Header("Screen Bounds")]
-    [SerializeField] private float _minX = -2.25f; 
-    [SerializeField] private float _maxX = 2.25f;  
-
-    private float _startX;
+    [SerializeField] private float _stopYPosition = 3.0f; 
+    [SerializeField] private float _swaySpeed = 2.0f;     
+    [SerializeField] private float _swayWidth = 3.0f;     
 
     protected override void Start()
     {
         base.Start();
-        _startX = transform.position.x;
+        _shootInterval = 2.0f;
     }
 
     public override void AttackPattern()
@@ -24,14 +18,18 @@ public class BasicWarShip : Enemy
         if (transform.position.y > _stopYPosition)
         {
             transform.Translate(Vector3.down * _moveSpeed * Time.deltaTime);
+
+          
+            float xToCenter = Mathf.MoveTowards(transform.position.x, 0f, _moveSpeed * Time.deltaTime);
+            transform.position = new Vector3(xToCenter, transform.position.y, 0);
         }
         else
         {
-            float rawX = _startX + Mathf.Sin(Time.time * _swaySpeed) * _swayWidth;
+            
+            
+            float newX = 0f + Mathf.Sin(Time.time * _swaySpeed) * _swayWidth;
 
-            float clampedX = Mathf.Clamp(rawX, _minX, _maxX);
-
-            transform.position = new Vector3(clampedX, transform.position.y, 0);
+            transform.position = new Vector3(newX, transform.position.y, 0);
         }
 
         Shoot();
