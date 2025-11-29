@@ -59,7 +59,6 @@ public abstract class Enemy : Character
         Debug.Log("Score + " + _scoreValue);
         
 
-        //  เอฟเฟกต์ระเบิด
         // Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
        
