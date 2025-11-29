@@ -2,15 +2,27 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    [field : SerializeField] public int CurrentScore {  get; private set; }
+    [field : SerializeField] public int HighScore { get; private set; }
+
+    public void AddScore(int scoreAmount)
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ResetScore()
     {
-        
+
+    }
+
+    public void LoadHighScore()
+    {
+
+    }
+
+    public void SaveHighScore()
+    {
+
     }
 }
