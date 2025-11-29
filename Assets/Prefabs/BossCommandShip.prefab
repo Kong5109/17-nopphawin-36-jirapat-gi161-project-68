@@ -208,11 +208,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterName: BossCommandShip
-  _hp: 120
+  _hp: 1500
   _moveSpeed: 0.5
   _scoreValue: 2000
   _enemyType: 3
-  _shootInterval: 0.5
+  _shootInterval: 0.1
   _bulletPrefab: {fileID: 1463057818955969077, guid: 1162eb467dae62148983cf3a9e3d14d1, type: 3}
   _firePoint: {fileID: 3832973439743890387}
   _entranceSpeed: 0.5

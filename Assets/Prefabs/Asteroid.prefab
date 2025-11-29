@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterName: Asteroid
-  _hp: 40
+  _hp: 60
   _moveSpeed: 2
   _scoreValue: 30
   _rotationSpeed: 100

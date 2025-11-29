@@ -208,15 +208,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterName: BasicWarShip
-  _hp: 30
+  _hp: 120
   _moveSpeed: 2
   _scoreValue: 100
   _enemyType: 0
-  _shootInterval: 1
+  _shootInterval: 0.8
   _bulletPrefab: {fileID: 3367732357860872877, guid: f280e8d5ee7428640bbbb748173f8228, type: 3}
   _firePoint: {fileID: 6566894315134821878}
   _stopYPosition: 3
   _swaySpeed: 1.25
   _swayWidth: 1.8
-  _minX: -2.25
-  _maxX: 2.25
