@@ -363,7 +363,7 @@ MonoBehaviour:
   _scoreValue: 0
   _lives: 3
   _fireRate: 0.5
-  _bulletPrefab: {fileID: 0}
+  _bulletPrefab: {fileID: 5422341815995984646, guid: c7d9e7ee8057261428280e7bbf3ba4ab, type: 3}
   _firePoint: {fileID: 1765691299}
 --- !u!4 &857413069 stripped
 Transform:
@@ -722,6 +722,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5848311269364993863, guid: b39946be1de86dc4fa38bbbb53bb3def, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -758,7 +762,7 @@ Transform:
   m_GameObject: {fileID: 1765691298}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.132, z: 0}
+  m_LocalPosition: {x: 0.016, y: 0.132, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
