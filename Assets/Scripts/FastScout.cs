@@ -2,38 +2,31 @@ using UnityEngine;
 
 public class FastScout : Enemy
 {
-    [Header("Movement Settings")]
-    [SerializeField] private float _waveFrequency = 1f;
-    [SerializeField] private float _waveMagnitude = 3f;
+    [Header("Circular Movement Settings")]
+    [SerializeField] private Vector3 _centerPosition = new Vector3(0, 2, 0); 
+    [SerializeField] private float _radius = 3.0f;        
+    [SerializeField] private float _rotationSpeed = 3.0f; 
 
-    [Header("Screen Bounds")]
-    [SerializeField] private float _minX = -8f; 
-    [SerializeField] private float _maxX = 8f;  
-
-    private float _startX;
+    private float _angle; 
 
     protected override void Start()
     {
         base.Start();
-        _startX = transform.position.x;
-        _shootInterval = 1.0f; 
+        _shootInterval = 0.5f; 
+        
+        _angle = 0;
     }
 
     public override void AttackPattern()
     {
-        transform.Translate(Vector3.down * _moveSpeed * Time.deltaTime);
+        _angle += _rotationSpeed * Time.deltaTime;
 
-        float rawX = _startX + Mathf.Sin(Time.time * _waveFrequency) * _waveMagnitude;
+      
+        float x = _centerPosition.x + Mathf.Cos(_angle) * _radius;
+        float y = _centerPosition.y + Mathf.Sin(_angle) * _radius;
 
-        float clampedX = Mathf.Clamp(rawX, _minX, _maxX);
-
-        transform.position = new Vector3(clampedX, transform.position.y, 0);
+        transform.position = new Vector3(x, y, 0);
 
         Shoot();
-
-        if (transform.position.y < -7f)
-        {
-            Destroy(gameObject);
-        }
     }
 }
