@@ -363,11 +363,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterName: Player
-  _hp: 10
+  _hp: 60
   _moveSpeed: 3
   _scoreValue: 0
   _lives: 2
-  _fireRate: 0.3
+  _fireRate: 0.2
   _bulletPrefab: {fileID: 5422341815995984646, guid: c7d9e7ee8057261428280e7bbf3ba4ab, type: 3}
   _firePoint: {fileID: 1765691299}
 --- !u!4 &857413069 stripped
@@ -887,7 +887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 294104836654691696, guid: 5e7eaa283579f05469e0838156bb379c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3153527353349459559, guid: 5e7eaa283579f05469e0838156bb379c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1016,7 +1016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8617818159877390023, guid: 0ab4aa6ffac1dfa40a2ef222c4772319, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

@@ -72,11 +72,9 @@ public class Player : Character
             {
                 GameObject bulletObj = Instantiate(_bulletPrefab, _firePoint.position, Quaternion.identity);
 
-                // --- ส่วนที่เพิ่มเข้ามา ---
                 Bullet bulletScript = bulletObj.GetComponent<Bullet>();
                 if (bulletScript != null)
                 {
-                    // ส่งข้อมูลไปบอกกระสุนว่า "Player เป็นคนยิงนะ" และ "ดาเมจเท่าไหร่นะ"
                     bulletScript.Init("Player", 10);
                 }
             }
