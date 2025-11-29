@@ -207,14 +207,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9e526e91cf1584da9707eb4314988a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterName: 
-  _hp: 150
+  _characterName: HeavyDrone
+  _hp: 50
   _moveSpeed: 1
   _scoreValue: 500
-  _enemyType: 0
+  _enemyType: 2
   _shootInterval: 2
   _bulletPrefab: {fileID: 1354054965821896268, guid: ee0b0b2f1a94ca9429a68d30855d0e08, type: 3}
   _firePoint: {fileID: 1498701232533350537}
-  _horizontalSpeed: 1.5
+  _horizontalSpeed: 4
+  _gunOffset: 0.5
   _minX: -2.25
   _maxX: 2.25

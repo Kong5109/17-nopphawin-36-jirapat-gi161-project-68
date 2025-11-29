@@ -2,9 +2,13 @@ using UnityEngine;
 
 public class HeavyDrone : Enemy
 {
-    [Header("Tracking Settings")]
-    [SerializeField] private float _horizontalSpeed = 1.5f; // ความเร็วในการไหลตามซ้ายขวา (ควรช้ากว่าบินลง)
+    [Header("Movement Settings")]
+    [SerializeField] private float _stopYPosition = 2.0f; 
+    [SerializeField] private float _horizontalSpeed = 3.0f; 
     
+    [Header("Weapon Settings")]
+    [SerializeField] private float _gunOffset = 0.5f;
+
     [Header("Screen Bounds")]
     [SerializeField] private float _minX = -8f;
     [SerializeField] private float _maxX = 8f;
@@ -15,20 +19,22 @@ public class HeavyDrone : Enemy
     {
         base.Start();
         
-        // ค้นหาตัวผู้เล่นในฉากเพื่อเอาตำแหน่งมาใช้
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
         {
             _playerTransform = playerObj.transform;
         }
 
-        // HeavyDrone ยิงช้าแต่หนักแน่น
-        _shootInterval = 3.0f; 
+        _shootInterval = 2.0f; 
     }
 
     public override void AttackPattern()
     {
-        transform.Translate(Vector3.down * _moveSpeed * Time.deltaTime);
+        if (transform.position.y > _stopYPosition)
+        {
+            transform.Translate(Vector3.down * _moveSpeed * Time.deltaTime);
+        }
+
 
         if (_playerTransform != null)
         {
@@ -40,17 +46,35 @@ public class HeavyDrone : Enemy
 
             transform.position = new Vector3(clampedX, transform.position.y, 0);
         }
-        else
-        {
-            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-            if (playerObj != null) _playerTransform = playerObj.transform;
-        }
 
-        Shoot();
+        FireDualGuns();
+    }
 
-        if (transform.position.y < -7f)
+    private void FireDualGuns()
+    {
+        if (Time.time > _nextShootTime)
         {
-            Destroy(gameObject);
+            if (_bulletPrefab != null && _firePoint != null)
+            {
+                SpawnBullet(-_gunOffset); 
+                SpawnBullet(_gunOffset);  
+            }
+            _nextShootTime = Time.time + _shootInterval;
         }
+    }
+
+    private void SpawnBullet(float xOffset)
+    {
+      
+        Vector3 spawnPos = transform.position + new Vector3(xOffset, -0.5f, 0);
+
+        GameObject bulletObj = Instantiate(_bulletPrefab, spawnPos, Quaternion.Euler(0, 0, 180));
+        
+        Bullet bulletScript = bulletObj.GetComponent<Bullet>();
+        if (bulletScript != null)
+        {
+            bulletScript.Init("Enemy", 15);
+        }
+    
     }
 }
