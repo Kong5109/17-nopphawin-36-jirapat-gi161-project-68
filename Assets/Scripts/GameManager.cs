@@ -2,15 +2,25 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [field: SerializeField] public bool IsGameOver { get; private set; }
+
+    public void StartGame()
+    {
+
+    }
+
+    public void Update()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GameOver()
     {
-        
+
+    }
+
+    public void RestartGame()
+    {
+
     }
 }
