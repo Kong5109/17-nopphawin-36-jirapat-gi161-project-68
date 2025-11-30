@@ -9,7 +9,7 @@ public class BossCommandShip : Enemy
     protected override void Start()
     {
         base.Start();
-        _shootInterval = 0.1f; 
+        //_shootInterval = 0.1f; 
     }
 
     public override void AttackPattern()

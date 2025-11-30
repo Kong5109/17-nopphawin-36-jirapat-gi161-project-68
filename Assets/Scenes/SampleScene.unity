@@ -1107,7 +1107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterName: Player
-  _hp: 750
+  _hp: 400
   _moveSpeed: 5
   _scoreValue: 0
   hpBar: {fileID: 654446810}
