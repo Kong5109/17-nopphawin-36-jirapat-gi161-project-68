@@ -13,6 +13,9 @@ public class Player : Character
 
     [SerializeField] private Transform _firePoint;
 
+    
+    [Header("Screen Bounds")]
+    
     private float _nextFireTime = 0f;
 
     private void Start()
@@ -48,16 +51,22 @@ public class Player : Character
 
     public void Move()
     {
-
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-
-
         Vector3 direction = new Vector3(horizontalInput, verticalInput, 0);
 
-
         transform.Translate(direction * _moveSpeed * Time.deltaTime);
+        
+        Vector3 minScreenBounds = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
+        Vector3 maxScreenBounds = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
 
+        
+        float offset = 0.5f; 
+        
+        float clampedX = Mathf.Clamp(transform.position.x, minScreenBounds.x + offset, maxScreenBounds.x - offset);
+        float clampedY = Mathf.Clamp(transform.position.y, minScreenBounds.y + offset, maxScreenBounds.y - offset);
+        
+        transform.position = new Vector3(clampedX, clampedY, transform.position.z);
     }
 
 
