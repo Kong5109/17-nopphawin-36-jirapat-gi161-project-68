@@ -212,7 +212,7 @@ MonoBehaviour:
   _moveSpeed: 2
   _scoreValue: 100
   _enemyType: 0
-  _shootInterval: 0.8
+  _shootInterval: 0.7
   _bulletPrefab: {fileID: 3367732357860872877, guid: f280e8d5ee7428640bbbb748173f8228, type: 3}
   _firePoint: {fileID: 6566894315134821878}
   _stopYPosition: 3

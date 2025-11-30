@@ -48,6 +48,7 @@ public class WaveManager : MonoBehaviour
 
     public void UpdateWaves()
     {
+        if (GameManager.Instance.IsGameOver) return;
         if (_isSpawning) return;
 
         if (IsAllWaveCleared())
@@ -59,8 +60,12 @@ public class WaveManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("ALL WAVES CLEARED! YOU WIN!");
-                enabled = false;
+                if (GameManager.Instance != null)
+                {
+                    GameManager.Instance.WinGame();
+                }
+                
+                enabled = false; // ปิด Script
             }
         }
     }
