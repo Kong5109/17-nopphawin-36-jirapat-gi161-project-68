@@ -23,7 +23,6 @@ public class Bullet : MonoBehaviour
 
     public void Move()
     {
-       
         transform.Translate(Vector3.up * _speed * Time.deltaTime);
     }
 

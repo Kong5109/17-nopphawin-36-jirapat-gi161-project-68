@@ -20,7 +20,7 @@ public abstract class Character : MonoBehaviour
     {
         _hp -= damage;
         
-        Debug.Log(_characterName + " took " + damage + " damage. Current HP: " + _hp);
+        //Debug.Log(_characterName + " took " + damage + " damage. Current HP: " + _hp);
 
         if (_hp <= 0)
         {

@@ -6,8 +6,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [Header("UI Settings")]
-    [SerializeField] private GameObject _gameOverPanel; 
-    [SerializeField] private GameObject _winPanel; 
+    [SerializeField] private GameObject _gameOverPanel;
+    [SerializeField] private GameObject _winPanel;
 
     public bool IsGameOver { get; private set; }
 
@@ -20,9 +20,9 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         if (_gameOverPanel != null) _gameOverPanel.SetActive(false);
-        
+
         if (_winPanel != null) _winPanel.SetActive(false);
-        
+
         IsGameOver = false;
     }
 
@@ -38,16 +38,14 @@ public class GameManager : MonoBehaviour
     {
         if (IsGameOver) return;
         IsGameOver = true;
-        
+
         if (_gameOverPanel != null) _gameOverPanel.SetActive(true);
     }
 
     public void WinGame()
     {
-        if (IsGameOver) return; 
-        IsGameOver = true;     
-
-        Debug.Log("YOU WIN!");
+        if (IsGameOver) return;
+        IsGameOver = true;
 
         if (_winPanel != null)
         {

@@ -3,24 +3,19 @@ using UnityEngine;
 
 public class Player : Character
 {
-    [Header("Player Specific Stats")] [SerializeField]
-    private int _lives = 3;
-
+    [Header("Player Specific Stats")] 
+    [SerializeField] private int _lives = 3;
     [SerializeField] private float _fireRate = 0.5f;
 
-    [Header("Shooting Setup")] [SerializeField]
-    private GameObject _bulletPrefab;
-
+    [Header("Shooting Setup")] 
+    [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Transform _firePoint;
 
-    
     [Header("Screen Bounds")]
-    
     private float _nextFireTime = 0f;
 
     private void Start()
     {
-
         if (_characterName == "") _characterName = "Player One";
     }
 
