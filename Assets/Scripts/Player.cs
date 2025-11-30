@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class Player : Character
 {
-    [Header("Player Specific Stats")] 
+    [Header("Player Specific Stats")]
+    [SerializeField] private Slider hpBar;
+    [SerializeField] private Image[] LiveImages;
     [SerializeField] private int _lives = 3;
     [SerializeField] private float _fireRate = 0.5f;
 
@@ -16,6 +19,9 @@ public class Player : Character
 
     private void Start()
     {
+        hpBar.maxValue = _hp;
+        UpdateHPBarValue();
+        UpdateLiveImageBaseOnLive();
         if (_characterName == "") _characterName = "Player One";
     }
 
@@ -25,6 +31,11 @@ public class Player : Character
         Shoot();
     }
 
+    public override void TakeDamage(int damage)
+    {
+        base.TakeDamage(damage);
+        UpdateHPBarValue();
+    }
 
     public override void Die()
     {
@@ -45,8 +56,29 @@ public class Player : Character
 
             Destroy(gameObject);
         }
+        UpdateLiveImageBaseOnLive();
+        UpdateHPBarValue();
     }
 
+    public void UpdateHPBarValue()
+    {
+        hpBar.value = _hp;
+    }
+
+    public void UpdateLiveImageBaseOnLive()
+    {
+        for (int i = 0; i < LiveImages.Length; i++)
+        {
+            if (i < _lives)
+            {
+                LiveImages[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                LiveImages[i].gameObject.SetActive(false);
+            }
+        }
+    }
 
 
     public void Move()
