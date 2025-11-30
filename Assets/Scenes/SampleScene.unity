@@ -919,7 +919,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1744545769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -939,8 +939,8 @@ MonoBehaviour:
     - {fileID: 4375761283880459826, guid: 5e7eaa283579f05469e0838156bb379c, type: 3}
     - {fileID: 7710159356665584856, guid: 0ab4aa6ffac1dfa40a2ef222c4772319, type: 3}
     - {fileID: 8754865706648310180, guid: 7b57c53a09c33084a818537c87fac14b, type: 3}
-    count: 15
-    rate: 0.5
+    count: 16
+    rate: 0.4
   - waveName: Chaos
     possibleSpawns:
     - {fileID: 9030893107548451727, guid: bdaa8f87471b052419e2db10b4b1088c, type: 3}
@@ -948,7 +948,7 @@ MonoBehaviour:
     - {fileID: 7710159356665584856, guid: 0ab4aa6ffac1dfa40a2ef222c4772319, type: 3}
     - {fileID: 8754865706648310180, guid: 7b57c53a09c33084a818537c87fac14b, type: 3}
     count: 20
-    rate: 0.5
+    rate: 0.3
   - waveName: Chaos
     possibleSpawns:
     - {fileID: 8754865706648310180, guid: 7b57c53a09c33084a818537c87fac14b, type: 3}
@@ -959,7 +959,7 @@ MonoBehaviour:
     - {fileID: 3005460001489154284, guid: d5887d0b84446db48a5e623608ad1dd2, type: 3}
     count: 1
     rate: 1
-  _timeBetweenWaves: 3
+  _timeBetweenWaves: 2
   _spawnPoints:
   - {fileID: 352750138}
   - {fileID: 808364118}
