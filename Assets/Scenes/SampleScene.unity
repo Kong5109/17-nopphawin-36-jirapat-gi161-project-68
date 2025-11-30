@@ -1107,7 +1107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterName: Player
-  _hp: 200
+  _hp: 750
   _moveSpeed: 5
   _scoreValue: 0
   hpBar: {fileID: 654446810}
@@ -1117,6 +1117,7 @@ MonoBehaviour:
   - {fileID: 964645222}
   _lives: 3
   _fireRate: 0.1
+  _bulletDamage: 30
   _bulletPrefab: {fileID: 5422341815995984646, guid: c7d9e7ee8057261428280e7bbf3ba4ab, type: 3}
   _firePoint: {fileID: 1765691299}
 --- !u!4 &857413069 stripped

@@ -9,6 +9,7 @@ public class Player : Character
     [SerializeField] private Image[] LiveImages;
     [SerializeField] private int _lives = 3;
     [SerializeField] private float _fireRate = 0.5f;
+    [SerializeField] private int _bulletDamage = 20;
 
     [Header("Shooting Setup")] 
     [SerializeField] private GameObject _bulletPrefab;
@@ -17,9 +18,11 @@ public class Player : Character
     [Header("Screen Bounds")]
     private float _nextFireTime = 0f;
 
+    private int _hpOnStartGame;
     private void Start()
     {
-        hpBar.maxValue = _hp;
+        _hpOnStartGame = _hp;
+        hpBar.maxValue = _hpOnStartGame;
         UpdateHPBarValue();
         UpdateLiveImageBaseOnLive();
         if (_characterName == "") _characterName = "Player One";
@@ -43,7 +46,7 @@ public class Player : Character
 
         if (_lives > 0)
         {
-            _hp = 100; 
+            _hp = _hpOnStartGame; 
         }
         else
         {
@@ -116,7 +119,7 @@ public class Player : Character
                 Bullet bulletScript = bulletObj.GetComponent<Bullet>();
                 if (bulletScript != null)
                 {
-                    bulletScript.Init("Player", 10);
+                    bulletScript.Init("Player", _bulletDamage);
                 }
             }
         }
