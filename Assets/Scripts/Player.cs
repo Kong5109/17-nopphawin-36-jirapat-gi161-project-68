@@ -34,15 +34,20 @@ public class Player : Character
     public override void Die()
     {
         _lives--;
-        Debug.Log(_characterName + " Died! Lives remaining: " + _lives);
 
         if (_lives > 0)
         {
-            _hp = 100;
+            _hp = 100; 
         }
         else
         {
             Debug.Log("GAME OVER");
+            
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.GameOver();
+            }
+
             Destroy(gameObject);
         }
     }
