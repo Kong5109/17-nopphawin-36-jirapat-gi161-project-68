@@ -55,13 +55,11 @@ public abstract class Enemy : Character
     
     public override void Die()
     {
-      
-        Debug.Log("Score + " + _scoreValue);
-        
-        //เอฟเฟคเมื่อตาย อาจจะทำ
-        // Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        if (ScoreManager.Instance != null)
+        {
+            ScoreManager.Instance.AddScore(ScoreValue);
+        }
 
-       
         Destroy(gameObject);
     }
 }

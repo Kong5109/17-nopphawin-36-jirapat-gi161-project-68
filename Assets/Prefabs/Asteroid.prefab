@@ -165,6 +165,6 @@ MonoBehaviour:
   _characterName: Asteroid
   _hp: 60
   _moveSpeed: 2
-  _scoreValue: 30
+  _scoreValue: 100
   _rotationSpeed: 100
   _crashDamage: 30

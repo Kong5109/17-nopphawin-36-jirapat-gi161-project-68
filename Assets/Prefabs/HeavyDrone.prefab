@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterName: HeavyDrone
-  _hp: 160
+  _hp: 200
   _moveSpeed: 1
   _scoreValue: 500
   _enemyType: 2

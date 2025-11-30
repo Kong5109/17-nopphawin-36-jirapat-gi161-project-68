@@ -58,11 +58,10 @@ public class Asteroid : Character
     
     public override void Die()
     {
-        //  เล่นเสียงระเบิด หรือ Spawn Particle เศษหิน อาจจะทำา
-        // Instantiate(asteroidExplosionEffect, transform.position, Quaternion.identity);
-
-        Debug.Log("Asteroid Destroyed! Score + " + _scoreValue);
-        
+        if (ScoreManager.Instance != null)
+        {
+            ScoreManager.Instance.AddScore(ScoreValue);
+        }
         Destroy(gameObject);
     }
 }
