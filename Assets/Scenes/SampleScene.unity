@@ -2381,12 +2381,12 @@ MonoBehaviour:
     - {fileID: 7710159356665584856, guid: 0ab4aa6ffac1dfa40a2ef222c4772319, type: 3}
     - {fileID: 8754865706648310180, guid: 7b57c53a09c33084a818537c87fac14b, type: 3}
     count: 25
-    rate: 0.2
+    rate: 0.1
   - waveName: Chaos
     possibleSpawns:
     - {fileID: 8754865706648310180, guid: 7b57c53a09c33084a818537c87fac14b, type: 3}
     count: 35
-    rate: 0.5
+    rate: 0.25
   - waveName: Boss Fight
     possibleSpawns:
     - {fileID: 3005460001489154284, guid: d5887d0b84446db48a5e623608ad1dd2, type: 3}
@@ -2626,7 +2626,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 999
   m_TargetDisplay: 0
 --- !u!224 &1791560729
 RectTransform:
